@@ -45,6 +45,18 @@ Using the parameter values shown above and without data augmentation, the minimu
 
 ![](/sample_images/um_000015.png)
 ![](/sample_images/um_000025.png)
+![](/sample_images/um_000051.png)
+![](/sample_images/um_000062.png)
+![](/sample_images/umm_000013.png)
+![](/sample_images/umm_000016.png)
+![](/sample_images/umm_000028.png)
+![](/sample_images/uu_000005.png)
+![](/sample_images/uu_000016.png)
+![](/sample_images/uu_000065.png)
+![](/sample_images/uu_000075.png)
+![](/sample_images/uu_000089.png)
+![](/sample_images/uu_000094.png)
+![](/sample_images/uu_000097.png)
 
 
 
