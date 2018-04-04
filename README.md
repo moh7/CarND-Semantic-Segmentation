@@ -1,10 +1,9 @@
 # Semantic Segmentation
 ### Introduction
-The goal of this project is to train a fully convolutional neural network (FCNN) to identify the free areas on the road from car dashcam images. The architecture of the FCNN model is based on VGG-16 image classifier with some additional layers for turning a regluar CNN to a FCNN. KITTI data was used for training and testing the network.
+The goal of this project is to train a fully convolutional neural network (FCNN) to identify the free areas on the road from car dashboard camera images. The architecture of the FCNN model is based on VGG-16 image classifier with some additional layers for turning a regluar CNN to a FCNN. [Kitti Road dataset](http://www.cvlibs.net/datasets/kitti/eval_road.php) was used for training and testing the network.
 
 ### Architecture
-A pretrained VGG-16 CNN was turned into a FCNN by replacing the fully connected layer at the end of the network by a 1x1 convolution layer with a depth equal to the number of classes. The number of classes in our case is equal to 2, free road space, not free road space. Replacing the fully connected layer with a 1x1 convolution layer will let us preserve the spacial information in the network. To improve the performance of the network, skip connections were added to the architecture by first adding the 1x1 convolution of layer 4 to upsampled 1x1 convolution of layer 7, and then adding the upsampled of the obtained layer to the 1x1 convolution of layer 3. Upsampling at each step is required in order to be able to add two layers with the same dimension. Lastly, the output layer is upsampled again by the factor of 8 to obtain the original input image shape in the output. The entire procedure is summarized in the following.
-
+The network architecture used in this project is based on the archeticure itroduced in [this]( https://people.eecs.berkeley.edu/~jonlong/long_shelhamer_fcn.pdf) article. A pretrained VGG-16 CNN was turned into a FCNN by replacing the fully connected layer at the end of the network by a 1x1 convolution layer with a depth equal to the number of classes. The number of classes in our case is equal to 2, correspoding to "free road space", "not free space". Replacing the fully connected layer with a 1x1 convolution layer will let us preserve the spatial information in the network. To improve the performance of the network, skip connections were added to the architecture by first adding the 1x1 convolution of layer 4 to upsampled 1x1 convolution of layer 7, and then adding the upsampled of the obtained layer to the 1x1 convolution of layer 3. Upsampling at each step is required in order to obtain proper shapes before adding two layers together. Lastly, the output layer is upsampled again by the factor of 8 to obtain an output layer with a shape identical to the shape of the original input image. The pseudo code of entire procedure for converting VGG-16 CNN to a FCNN is summarized in the following.
 
 ```
 # 1x1 convolution of layers 3, 4, and 7
@@ -39,8 +38,7 @@ BATCH_SIZE = 5
 ```
 
 ### Results
-Using the parameter values shown above and without data augmentation, the minimum of loss of 0.031 was obtained at epoch 10. No further improvement in the loss was observed after epoch 10. The following pictures show some samples of the performance of the trained semantic segmentation model.
-
+Using the parameter values shown above and without augmenting the data, the minimum loss of 0.031 was obtained at epoch 10. No further improvement in the loss was observed after epoch 10. The following pictures show some samples of the performance of the trained semantic segmentation model on test images.
 
 
 ![](/sample_images/um_000015.png)
@@ -59,7 +57,7 @@ Using the parameter values shown above and without data augmentation, the minimu
 ![](/sample_images/uu_000097.png)
 
 
-
+## Original Project ReadMe.md
 ### Setup
 ##### Frameworks and Packages
 Make sure you have the following is installed:
