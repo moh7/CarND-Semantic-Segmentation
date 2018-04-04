@@ -43,7 +43,8 @@ Using the parameter values shown above and without data augmentation, the minimu
 
 
 
-
+![first image](runs/1522832856.8023028/um_000000.png)
+Format: ![Alt Text](url)
 
 
 
