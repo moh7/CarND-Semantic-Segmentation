@@ -43,7 +43,7 @@ Using the parameter values shown above and without data augmentation, the minimu
 
 
 
-![first image](/sample images/um_000015.png)
+![first image](/sample_images/um_000015.png)
 Format: ![](url)
 
 
