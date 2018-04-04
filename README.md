@@ -44,6 +44,7 @@ Using the parameter values shown above and without data augmentation, the minimu
 
 
 ![](/sample_images/um_000015.png)
+![](/sample_images/um_000025.png)
 
 
 
